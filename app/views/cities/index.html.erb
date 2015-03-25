@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<%= render 'map' %>
+<div class="hero-unit">
+  <%= render 'map' %>
+</div>
 
 <h1>Listing Cities</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>City</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +21,12 @@
     <% @cities.each do |city| %>
       <tr>
         <td><%= city.city %></td>
-        <td><%= link_to 'Show', city %></td>
-        <td><%= link_to 'Edit', edit_city_path(city) %></td>
-        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= city.latitude %></td>
+        <td><%= city.longitude %></td>
+        <td><%= image_tag "#{get_wiki( city )}", :class => "img-polaroid", :width => "90px" %></td>
+        <td><%= link_to 'Show', city, :class => "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_city_path(city), :class => "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New City', new_city_path %>
+<%= link_to 'New City', new_city_path, :class => "btn btn-primary" %>

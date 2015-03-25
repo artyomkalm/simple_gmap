@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'gmaps4rails'
 gem 'geocoder'
+gem 'wikipedia-client', '~> 1.3.3'
 
 group :development, :test do
   gem 'byebug'

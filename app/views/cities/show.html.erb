@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<%= render 'map' %>
+
 <p>
   <strong>City:</strong>
   <%= @city.city %>
 </p>
+<div class="container">
+  <%= image_tag "#{get_info( @city )}", :class => "img-polaroid", :width => "900px" %>
+</div>
 
 <%= link_to 'Edit', edit_city_path(@city) %> |
 <%= link_to 'Back', cities_path %>
